@@ -11,7 +11,7 @@ public class Policy {
 	private double phHeight;
 	private double phWeight;
 	
-	// no arg-constructor
+	
 	public Policy(){
 		policyNumber = 0000;
 		providerName = "Empty";
@@ -25,16 +25,14 @@ public class Policy {
 		
 	}
 	
-   // arg constructor
 	public Policy(int pNumber, String pName, String phFName, String phLName, int phA, String phSmokeStt, double phHt, double phWt) {
 		policyNumber = pNumber;
 		providerName = pName;
 		phFirstName = phFName;
-		phLName = phLastName;
+		phLastName = phLName;
 		phAge = phA;
 		
 		
-      // if is smoker, sets smoking status into a boolean
 		phSmokingStatus = phSmokeStt;
 		if (phSmokingStatus.equalsIgnoreCase("smoker")) {
 			phSSBool = true;
@@ -48,7 +46,6 @@ public class Policy {
 		phWeight = phWt;
 	}
 	
-   // method calculates bmi, used string format to round decimal in case, then send rounded string variable back through parse double
 	public double BMI() {
 		double bmi;
 		String strBmi;
@@ -58,10 +55,10 @@ public class Policy {
 		return bmi;
 	}
 	
-   // calculates insurance price
 	public double insurancePrice() {
 		double additionalFee = (BMI() - 35) *20;
 		final double baseFee = 600;
+		String strFee;
 		if (phAge > 50) {
 			additionalFee += 75;
 		}
@@ -69,11 +66,11 @@ public class Policy {
 			additionalFee += 100;
 		}
 		additionalFee += baseFee;
+		strFee = String.format("%.2f", additionalFee);
+		additionalFee = Double.parseDouble(strFee);
 		return additionalFee;
 	}
 	
-   
-   // Acessor methods
 	public int getPolicyNumber() {
 		return policyNumber;
 	}
@@ -105,6 +102,7 @@ public class Policy {
 	public double getPolicyHolderWeight() {
 		return phWeight;
 	}
-   
-   
+	public double getPolicyHolderBMI() {
+		return BMI();
+	}
 }
