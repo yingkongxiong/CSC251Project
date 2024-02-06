@@ -79,21 +79,29 @@ public class Policy {
    // calculates the insurance price and returns it
    // @return the insurance price after adding all factors
 	public double insurancePrice() {
+      double fee = 0;
 		double additionalFee = (BMI() - 35) *20;
 		final double baseFee = 600;
 		String strFee;
+      
+      
 		if (phAge > 50) {
-			additionalFee += 75;
+			fee += 75;
 		}
       
       // Uses Smoking Status boolean to determine whether to add fee or not
 		else if (phSSBool) {
-			additionalFee += 100;
+			fee += 100;
 		}
-		additionalFee += baseFee;
-		strFee = String.format("%.2f", additionalFee);
-		additionalFee = Double.parseDouble(strFee);
-		return additionalFee;
+      
+      // adds additional fee if bmi is more than 35
+      else if (BMI() > 35) {
+         fee += additionalFee;
+      }
+		fee += baseFee;
+		strFee = String.format("%.2f", fee);
+		fee = Double.parseDouble(strFee);
+		return fee;
 	}
 	
    
