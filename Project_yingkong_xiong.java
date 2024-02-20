@@ -5,7 +5,7 @@ public class Project_yingkong_xiong {
 	public static void main(String args[]) throws FileNotFoundException {
 		
 		ArrayList<Policy> al = new ArrayList<Policy>();
-		File fileName = new File("D:\\Yingkong\\Documents\\Eclipse JAVA\\ok\\src\\ok\\PolicyInformation.txt");
+		File fileName = new File("D:\\Yingkong\\Documents\\GitHubRepositories\\CSC251Project\\PolicyInformation.txt");
 		Scanner file = new Scanner(fileName);
 		int policyNumber = 0;
 		String providerName = "";
@@ -31,16 +31,7 @@ public class Project_yingkong_xiong {
 			file.nextLine();
 			Policy customer = new Policy(policyNumber, providerName, phFirstName, phLastName, phAge, phSmokingStatus, phHeight, phWeight);
 			al.add(customer);
-			System.out.println("Policy Number: " + customer.getPolicyNumber());
-			System.out.println("Provider Name: " + customer.getProviderName());
-			System.out.println("Policyholder's First Name: " + customer.getPolicyHolderFirstName());
-			System.out.println("Policyholder's Last Name: " + customer.getPolicyHolderLastName());
-			System.out.println("Policyholder's Age: " + customer.getPolicyHolderAge());
-			System.out.println("Policyholder's Smoking Status: " + customer.getSmokingStatus());
-			System.out.println("Policyholder's Height: " + customer.getPolicyHolderHeight() + " inches");
-			System.out.println("Policyholder's Weight: " + customer.getPolicyHolderWeight() + " pounds");
-			System.out.println("Policyholder's BMI: " + customer.getPolicyHolderBMI());
-			System.out.println("Policy Price $" + customer.insurancePrice());
+			System.out.println(customer);
 		}
 		
 		int smokers = 0;

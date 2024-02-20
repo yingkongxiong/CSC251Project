@@ -1,5 +1,10 @@
 public class Policy {
 
+
+
+   // policy now has policyholder in its class
+	private PolicyHolder pHolder;
+
    // Initializing Private Variables
 	private int policyNumber;
 	private String providerName;
@@ -156,8 +161,16 @@ public class Policy {
    
    // toString method
 	public String toString() {
-		return "hi";
-	}
+		return "Policy Number: " + getPolicyNumber() +'\n' +
+		"Provider Name: " + getProviderName() +'\n' +
+		"Policyholder's First Name: " + getPolicyHolderFirstName() +'\n' +
+		"Policyholder's Last Name: " + getPolicyHolderLastName() +'\n' +
+		"Policyholder's Age: " + getPolicyHolderAge() +'\n' +
+		"Policyholder's Smoking Status: " + getSmokingStatus() +'\n' +
+		"Policyholder's Height: " + getPolicyHolderHeight() + " inches" +'\n' +
+		"Policyholder's Weight: " + getPolicyHolderWeight() + " pounds" +'\n' +
+		"Policyholder's BMI: " + getPolicyHolderBMI() +'\n' +
+		"Policy Price $" + insurancePrice();	}
 
 	public static final int POLICY_OBJECTS = 8;
 }
