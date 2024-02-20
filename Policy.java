@@ -158,4 +158,6 @@ public class Policy {
 	public String toString() {
 		return "hi";
 	}
+
+	public static final int POLICY_OBJECTS = 8;
 }
