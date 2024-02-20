@@ -151,4 +151,11 @@ public class Policy {
 	public double getPolicyHolderBMI() {
 		return BMI();
 	}
+   
+   
+   
+   // toString method
+	public String toString() {
+		return "hi";
+	}
 }
